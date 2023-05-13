@@ -44,11 +44,10 @@ The pipeline has been tested on Ubuntu v22.10, Python v3.10.7 ([UCloud](https://
 Python's [venv](https://docs.python.org/3/library/venv.html) needs to be installed for the pipeline to work.
 
 ### Setup
-Before running the classification, please run ```setup.sh``` in the terminal. 
+Before running the classifications, please run ```setup.sh``` in the terminal to create a virtual environment (```env```) and install necessary requirements: 
 ```
 bash setup.sh
 ```
-The script installs the necessary packages and its dependencies in a newly created virtual environment (```env```). 
 
 ### Running the Classification
 To reproduce the results of the repository, please type the following in the terminal: 
