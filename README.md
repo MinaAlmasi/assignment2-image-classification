@@ -38,7 +38,8 @@ The repository is structured as such:
 ```
 
 ## Pipeline
-The pipeline has been tested on Ubuntu ([UCloud](https://cloud.sdu.dk/)). Python's [venv](https://docs.python.org/3/library/venv.html) needs to be installed for the pipeline to work.
+The pipeline has been tested on Ubuntu v22.10, Python v3.10.7 ([UCloud](https://cloud.sdu.dk/), Coder Python 1.77.3). 
+Python's [venv](https://docs.python.org/3/library/venv.html) needs to be installed for the pipeline to work.
 
 ### Setup
 Before running the classification, please run ```setup.sh``` in the terminal. 
