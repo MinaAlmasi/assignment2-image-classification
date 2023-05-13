@@ -1,4 +1,6 @@
 # Image Classification with scikit-learn
+Repository link: https://github.com/MinaAlmasi/assignment2-image-classification
+
 This repository forms *assignment 2* by Mina Almasi (202005465) in the subject *Visual Analytics*, *Cultural Data Science*, F2023. The assignment description can be found [here](https://github.com/MinaAlmasi/assignment2-image-classification/blob/master/assignment-desc.md). 
 
 The repository contains code for doing multiclass classification. Concretely, a logistic regression and a neural network  is trained and evaluated using ```scikit-learn```. See the [results](https://github.com/MinaAlmasi/assignment2-image-classification/tree/master#results) section for their final performance.
