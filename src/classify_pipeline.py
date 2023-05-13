@@ -8,12 +8,11 @@ To run the entire pipeline, import the function clf_pipeline into your script ! 
 '''
 
 # system tools
-from pathlib import Path
-import os
+import pathlib
 
 # custom utils
 import sys
-sys.path.append(str(Path(__file__).parents[1]))
+sys.path.append(str(pathlib.Path(__file__).parents[1]))
 from utils.custom_logging import custom_logger 
 
 # machine learning
@@ -64,30 +63,29 @@ def clf_get_name(classifier):
     return classifier_name
 
 
-def clf_metrics_to_txt(txt_name, output_dir, clf_metrics, params):
+def clf_metrics_to_txt(txt_name:str, output_dir:pathlib.Path(), clf_metrics, params):
     '''
     Converts scikit-learn's classification report (metrics.classification_report) to a .txt file. 
 
     Args:
-        - clf_metrics: metrics report (sklearn.metrics.classification_report() or returned from clf_evaluate)
         - txtname: filename for .txt report
         - output_dir: directory where the text file should be stored. 
+        - clf_metrics: metrics report (sklearn.metrics.classification_report() or returned from clf_evaluate)
         - params: classifier params. (Returned from .get_params())
     
     Outputs: 
         - .txt file in specified output_dir
-
     '''
 
     # define filename 
-    filepath = os.path.join(output_dir, txt_name)
+    filepath = output_dir / txt_name
 
     # write clf metrics 
     with open(f'{filepath}.txt', "w") as file: 
         file.write(f"Results from model with parameters {params} \n {clf_metrics}")
 
 
-def clf_pipeline(classifier, X_train_feats, y_train, X_test_feats, y_test, labels, output_dir,
+def clf_pipeline(classifier, X_train_feats, y_train, X_test_feats, y_test, labels, output_dir:pathlib.Path(),
                  save_model:bool=False, model_dir=None):
     '''
     Classifier pipeline which does model fitting and model evaluation of an instantiated classifier in the scikit-learn framework. 
@@ -125,7 +123,7 @@ def clf_pipeline(classifier, X_train_feats, y_train, X_test_feats, y_test, label
     
     if save_model == True:
         logging.info(f"Saving ... ")
-        model_path = os.path.join(model_dir, f"{classifier_name}_classifier")
+        model_path = model_dir / f"{classifier_name}_classifier"
         dump(classifier, model_path)
     
     return classifier 

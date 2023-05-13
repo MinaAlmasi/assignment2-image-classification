@@ -9,12 +9,12 @@ Run the script by typing in the command line:
 '''
 
 # system tools
-from pathlib import Path
+import pathlib
 import time
 
 # custom utils 
 import sys
-sys.path.append(str(Path(__file__).parents[1]))
+sys.path.append(str(pathlib.Path(__file__).parents[1]))
 from utils.classify_dataload import load_npz_vec_data
 from utils.custom_logging import custom_logger 
 
@@ -28,7 +28,7 @@ def main():
     logging = custom_logger("LR_logger")
 
     # define paths
-    path = Path(__file__) # path to current file
+    path = pathlib.Path(__file__) # path to current file
     input_dir = path.parents[1] / "in" 
     datafile = "preprocessed_cifar.npz"
 

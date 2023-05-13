@@ -9,12 +9,11 @@ Run the script by typing in the command line:
 '''
 
 # system tools 
-import os 
-from pathlib import Path
+import pathlib
 
 # custom logger
 import sys
-sys.path.append(str(Path(__file__).parents[1]))
+sys.path.append(str(pathlib.Path(__file__).parents[1]))
 from utils.custom_logging import custom_logger 
 
 # data loader
@@ -88,8 +87,11 @@ def main():
     logging = custom_logger("preprocess_data")
 
     # define paths 
-    path = Path(__file__) # path to current file
+    path = pathlib.Path(__file__) # path to current file
     save_dir = path.parents[1] / "in"
+
+    # ensure save dir is made
+    save_dir.mkdir(exist_ok=True, parents=True)
 
     # load dataset
     logging.info("Loading raw data ...")
@@ -98,14 +100,12 @@ def main():
     # preprocess data 
     logging.info("Preprocessing raw data ...")
     X_train_feats, X_test_feats = data_preprocess(X_train, X_test)
-
-    # save data 
-    if not os.path.exists(save_dir): # make output dir if it does not exist
-        os.makedirs(save_dir)
     
-    filepath = os.path.join(save_dir, "preprocessed_cifar.npz")
+    # save data 
+    filepath = save_dir /  "preprocessed_cifar.npz"
     np.savez_compressed(filepath, X_train_feats = X_train_feats, X_test_feats= X_test_feats, y_train = y_train, y_test = y_test, labels=labels)
-    logging.info(f"Preprocessed data saved to '{str(save_dir).split('/')[-1]}' directory ...")
+    
+    logging.info(f"Preprocessed data saved! ...")
 
 if __name__ == "__main__":
     main()
