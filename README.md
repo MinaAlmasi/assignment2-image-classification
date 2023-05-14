@@ -104,7 +104,7 @@ This model was run with the parameters: *random_state=129, hidden_layer_sizes=(3
 Both models perform above chance level (10%), but the neural network is slightly better performing when looking at the macro averaged F1 score (0.35 versus 0.31). Both classifiers are best at classes   ```ship``` and ```truck```. 
 
 ## Author
-All code is made by Mina Almasi.
+This repository was created by Mina Almasi:
 - github user: @MinaAlmasi
 - student no: 202005465, AUID: au675000
 - mail: mina.almasi@post.au.dk 
