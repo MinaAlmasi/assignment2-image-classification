@@ -101,7 +101,7 @@ weighted avg       0.35      0.35      0.35     10000
 This model was run with the parameters: *random_state=129, hidden_layer_sizes=(30,), activation="logistic", early_stopping=True, tol=0.2, max_iter=1000*
 
 ### Remark on the Results
-Both models perform above chance level (10%), but the neural network is slightly better performing when looking at the macro averaged F1 score (0.35 versus 0.32). Both classifiers are best at classes   ```ship``` and ```truck```. 
+Both models perform above chance level (10%), but the neural network is slightly better performing when looking at the macro averaged F1 score (0.35 versus 0.31). Both classifiers are best at classes   ```ship``` and ```truck```. 
 
 ## Author
 All code is made by Mina Almasi.
