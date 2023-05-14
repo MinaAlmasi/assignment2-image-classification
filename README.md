@@ -3,7 +3,7 @@ Repository link: https://github.com/MinaAlmasi/assignment2-image-classification
 
 This repository forms *assignment 2* by Mina Almasi (202005465) in the subject *Visual Analytics*, *Cultural Data Science*, F2023. The assignment description can be found [here](https://github.com/MinaAlmasi/assignment2-image-classification/blob/master/assignment-desc.md). 
 
-The repository contains code for doing multiclass classification. Concretely, a logistic regression and a neural network  is trained and evaluated using ```scikit-learn```. See the [results](https://github.com/MinaAlmasi/assignment2-image-classification/tree/master#results) section for their final performance.
+The repository contains code for doing multiclass classification. Concretely, a logistic regression and a neural network  is trained and evaluated using ```scikit-learn```. See the [Results](https://github.com/MinaAlmasi/assignment2-image-classification/tree/master#results) section for their final performance.
 
 ## Data 
 The classifiers are trained and evaluated on the [CIFAR10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html) (Krizhevsky, 2009). The dataset comprises 60000 color images in the size 32x32 (50000 training and 10000 test images). The images are split in 10 classes (```airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck```) and there are 6000 images per class. 
@@ -11,14 +11,14 @@ The classifiers are trained and evaluated on the [CIFAR10 dataset](https://www.c
 ## Reproducability 
 To reproduce the results, follow the instructions in the [*Pipeline*](https://github.com/MinaAlmasi/assignment2-image-classification/tree/master#pipeline) section. 
 
-**NB! Be aware that fitting models (esp. the MLPClassifier) can be computationally intensive and may take several minutes. Cloud computing (e.g., Ucloud) is encouraged**.
+NB! Be aware that fitting models (esp. the MLPClassifier) can be computationally intensive and may take several minutes. Cloud computing (e.g., [UCloud](https://cloud.sdu.dk/)) is encouraged.
 
 ## Project Structure 
 The repository is structured as such: 
 ```
 ├── README.md
 ├── assignment-desc.md
-├── in                          <---    preprocessed data (.npz) is stored here after running preprocess_data.py
+├── in                          <---    preprocessed data (.npz) after running preprocess_data.py
 │   └── README.md                      
 ├── models                      <---    classifiers saved here 
 │   ├── LR_classifier
@@ -27,7 +27,7 @@ The repository is structured as such:
 │   ├── LR_metrics.txt
 │   └── MLP_metrics.txt
 ├── requirements.txt
-├── run.sh                      <---    preprocess data & run classifier pipeline for both classifiers 
+├── run.sh                      <---    preprocess data, run classifier pipeline for LR & MLP 
 ├── setup.sh                    <---    create venv and install reqs 
 ├── src
 │   ├── classify_LR.py          <---    run logistic regression (LR)
